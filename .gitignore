@@ -131,3 +131,19 @@ dmypy.json
 .metadata
 *.iml
 *.ipr
+
+
+
+# java
+out/
+*.class
+*.log
+*.ctxt
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane style="-fx-background-color: #2f353a;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+    <center>
+        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" BorderPane.alignment="CENTER">
+            <children>
+                <HBox>
+                    <children>
+                        <VBox alignment="CENTER" minWidth="200.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #187da0; -fx-background-radius: 5%;" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="A Value: " textFill="#f5ecec">
+                                    <font>
+                                        <Font size="22.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="resultA" text="00" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="23.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets top="12.0" />
+                                    </VBox.margin>
+                                </Label>
+                            </children>
+                            <HBox.margin>
+                                <Insets left="8.0" right="8.0" />
+                            </HBox.margin>
+                        </VBox>
+                        <VBox alignment="CENTER" minWidth="200.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #2eadd3; -fx-background-radius: 5%;" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="B Value:" textFill="#f5ecec">
+                                    <font>
+                                        <Font size="22.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="resultB" text="00" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="23.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets top="12.0" />
+                                    </VBox.margin>
+                                </Label>
+                            </children>
+                            <HBox.margin>
+                                <Insets left="8.0" right="8.0" />
+                            </HBox.margin>
+                        </VBox>
+                        <VBox alignment="CENTER" minWidth="200.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #ffc107; -fx-background-radius: 5%;" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="C Value:" textFill="#f5ecec">
+                                    <font>
+                                        <Font size="22.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="resultC" text="00" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="23.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets top="12.0" />
+                                    </VBox.margin>
+                                </Label>
+                            </children>
+                            <HBox.margin>
+                                <Insets left="8.0" right="8.0" />
+                            </HBox.margin>
+                        </VBox>
+                        <VBox alignment="CENTER" minWidth="200.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #f5302e; -fx-background-radius: 5%;" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="D Value:" textFill="#f5ecec">
+                                    <font>
+                                        <Font size="22.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="resultD" text="00" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="23.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets top="12.0" />
+                                    </VBox.margin>
+                                </Label>
+                            </children>
+                            <HBox.margin>
+                                <Insets left="8.0" right="8.0" />
+                            </HBox.margin>
+                        </VBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="50.0" />
+                    </VBox.margin>
+                </HBox>
+                <Label text="Control" textFill="#aaaaaa">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="10.0" />
+                    </VBox.margin>
+                </Label>
+                <VBox style="-fx-background-color: #3a4148;">
+                    <children>
+                        <HBox>
+                            <children>
+                                <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Button fx:id="addBtnA" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #73818f;" text="Add" textFill="#eeeeee" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                            </VBox.margin>
+                                        </Button>
+                                        <Button fx:id="subtractBtnA" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #73818f;" text="Subtract" textFill="#eeeeee" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                                <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Button fx:id="addBtnB" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #73818f;" text="Add" textFill="#eeeeee" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                            </VBox.margin>
+                                        </Button>
+                                        <Button fx:id="subtractBtnB" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #73818f;" text="Subtract" textFill="#eeeeee" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                                <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Button fx:id="addBtnC" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #73818f;" text="Add" textFill="#eeeeee" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                            </VBox.margin>
+                                        </Button>
+                                        <Button fx:id="subtractBtnC" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #73818f;" text="Subtract" textFill="#eeeeee" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                                <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Button fx:id="addBtnD" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #73818f;" text="Add" textFill="#eeeeee" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                            </VBox.margin>
+                                        </Button>
+                                        <Button fx:id="subtractBtnD" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: #73818f;" text="Subtract" textFill="#eeeeee" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                            </padding>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <VBox.margin>
+                        <Insets top="50.0" />
+                    </VBox.margin>
+                    <children>
+                        <Label text="Channel" textFill="#aaaaaa">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <HBox style="-fx-background-color: #3f454a;">
+                            <children>
+                                <VBox alignment="CENTER" minWidth="200.0" prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label text="A Value: " textFill="#aaaaaa">
+                                            <font>
+                                                <Font size="22.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="channelA" text="00" textFill="#cccccc">
+                                            <font>
+                                                <Font name="System Bold" size="23.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets top="12.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets left="8.0" right="8.0" />
+                                    </HBox.margin>
+                                </VBox>
+                                <VBox alignment="CENTER" minWidth="200.0" prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label text="B Value:" textFill="#aaaaaa">
+                                            <font>
+                                                <Font size="22.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="channelB" text="00" textFill="#cccccc">
+                                            <font>
+                                                <Font name="System Bold" size="23.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets top="12.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets left="8.0" right="8.0" />
+                                    </HBox.margin>
+                                </VBox>
+                                <VBox alignment="CENTER" minWidth="200.0" prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label text="C Value:" textFill="#aaaaaa">
+                                            <font>
+                                                <Font size="22.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="channelC" text="00" textFill="#cccccc">
+                                            <font>
+                                                <Font name="System Bold" size="23.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets top="12.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets left="8.0" right="8.0" />
+                                    </HBox.margin>
+                                </VBox>
+                                <VBox alignment="CENTER" minWidth="200.0" prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label text="D Value:" textFill="#aaaaaa">
+                                            <font>
+                                                <Font size="22.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="channelD" text="00" textFill="#cccccc">
+                                            <font>
+                                                <Font name="System Bold" size="23.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets top="12.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets left="8.0" right="8.0" />
+                                    </HBox.margin>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </BorderPane.margin>
+        </VBox>
+    </center>
+    <top>
+        <HBox alignment="CENTER" style="-fx-background-color: #3a4148;" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="JavaFx - Django Communication" textFill="#b8cde4">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+            </children>
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+        </HBox>
+    </top>
+    <bottom>
+        <HBox alignment="CENTER_LEFT" style="-fx-background-color: #3a4148;">
+            <padding>
+                <Insets bottom="5.0" left="30.0" right="30.0" top="5.0" />
+            </padding>
+            <children>
+                <Label fx:id="appStatus" text="Status: ideal." textFill="#aaaaaa">
+                    <font>
+                        <Font name="System" size="12.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
