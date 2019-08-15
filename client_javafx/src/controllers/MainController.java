@@ -60,13 +60,17 @@ public class MainController {
     @FXML
     private Label channelD;
 
+    private Field fieldModel;
+
     public void initialize()
     {
+        this.fieldModel = new Field(this);
+
         try {
             this.setInitialFieldsValues();
         }
         catch (Exception e) {
-            this.updateAppStatus("Can't retrieve the initial fields values");
+            this.updateAppStatus("Can't retrieve the initial fields values\n\n");
         }
 
         this.addBtnA.setOnAction(e -> this.add("A", 1));
@@ -82,24 +86,23 @@ public class MainController {
 
     private void setInitialFieldsValues()
     {
-        // try to get the initial values
-        Field field = new Field(this);
+        // retrieve the initial values
         JSONObject jsonFields = null;
 
         try {
-            jsonFields = field.getInitialValues();
-            this.updateAppStatus("retrieved Json is " + jsonFields.toString());
+            jsonFields = this.fieldModel.getInitialValues();
+            this.updateAppStatus("retrieved Json is " + jsonFields.toString() + "\n\n");
         }
         catch (Exception e) {
-            this.updateAppStatus("Can't retrieve the initial fields values");
+            this.updateAppStatus("Can't retrieve the initial fields values\n\n");
         }
 
-        // update the app status with the retrieved values
+        // show the initial values
         try {
             this.setResultLabels(jsonFields);
         }
         catch (JSONException e) {
-            this.updateAppStatus("Can't parse the initial fields values");
+            this.updateAppStatus("Can't parse the initial fields values\n\n");
         }
     }
 
@@ -108,11 +111,63 @@ public class MainController {
      *
      * @param jsonFields
      */
-    private void setResultLabels(JSONObject jsonFields) throws JSONException {
+    private void setResultLabels(JSONObject jsonFields) throws JSONException
+    {
         this.resultA.setText( jsonFields.getString("A") );
         this.resultB.setText( jsonFields.getString("B") );
         this.resultC.setText( jsonFields.getString("C") );
         this.resultD.setText( jsonFields.getString("D") );
+    }
+
+    @FXML
+    public void add(String field, int value)
+    {
+        // send a request to update the value of the given field
+        JSONObject jsonFields = null;
+
+        try {
+            jsonFields = this.fieldModel.updateField(field, value);
+            this.updateAppStatus("retrieved Json is " + jsonFields.toString() + "\n\n");
+        }
+        catch (Exception e) {
+            this.updateAppStatus("Can't update the value of the field: " + field + "\n\n");
+        }
+
+        // show the updated values
+        try {
+            this.setResultLabel(field, jsonFields);
+        }
+        catch (JSONException e) {
+            this.updateAppStatus("Can't parse the retrieved value of the field: " + field + "\n\n");
+        }
+    }
+
+    /**
+     * use the given json {"field":44} to show the fields results
+     *
+     * @param jsonFields
+     */
+    private void setResultLabel(String field, JSONObject jsonFields) throws JSONException
+    {
+        int newValue = jsonFields.getInt("field");
+
+        switch (field) {
+            case "A":
+                resultA.setText(Integer.toString(newValue));
+                break;
+
+            case "B":
+                resultB.setText(Integer.toString(newValue));
+                break;
+
+            case "C":
+                resultC.setText(Integer.toString(newValue));
+                break;
+
+            case "D":
+                resultD.setText(Integer.toString(newValue));
+                break;
+        }
     }
 
     /**
@@ -128,7 +183,4 @@ public class MainController {
         // update the status bar
         this.appStatus.setText("Status: " + paragraph);
     }
-
-    @FXML
-    public void add(String field, int value) {}
 }
