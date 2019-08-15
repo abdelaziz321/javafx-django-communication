@@ -2,15 +2,10 @@ package controllers;
 
 import models.Field;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import org.json.JSONObject;
+import org.json.JSONException;
 import javafx.scene.control.Label;
-
-import java.net.URL;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-
-
+import javafx.scene.control.Button;
 
 public class MainController {
 
@@ -89,20 +84,35 @@ public class MainController {
     {
         // try to get the initial values
         Field field = new Field(this);
-        String values = "";
+        JSONObject jsonFields = null;
 
         try {
-            // TODO: this should return a map with values for [A, B, C, D]  "dictionary"
-            values = field.getInitialValues();
+            jsonFields = field.getInitialValues();
+            this.updateAppStatus("retrieved Json is " + jsonFields.toString());
         }
         catch (Exception e) {
             this.updateAppStatus("Can't retrieve the initial fields values");
         }
 
         // update the app status with the retrieved values
-        if (!values.isEmpty()) {
-            this.updateAppStatus("values are " + values);
+        try {
+            this.setResultLabels(jsonFields);
         }
+        catch (JSONException e) {
+            this.updateAppStatus("Can't parse the initial fields values");
+        }
+    }
+
+    /**
+     * use the given json {"A":3,"B":14,"C":56,"D":37} to show the fields results
+     *
+     * @param jsonFields
+     */
+    private void setResultLabels(JSONObject jsonFields) throws JSONException {
+        this.resultA.setText( jsonFields.getString("A") );
+        this.resultB.setText( jsonFields.getString("B") );
+        this.resultC.setText( jsonFields.getString("C") );
+        this.resultD.setText( jsonFields.getString("D") );
     }
 
     /**

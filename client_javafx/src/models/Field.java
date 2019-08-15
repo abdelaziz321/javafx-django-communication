@@ -1,12 +1,18 @@
 package models;
 
 import controllers.MainController;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * the data source
+ * here will be all the api calls.
+ */
 public class Field {
     private MainController mainController;
 
@@ -20,7 +26,7 @@ public class Field {
         this.mainController = mainController;
     }
     
-    public String getInitialValues() throws Exception {
+    public JSONObject getInitialValues() throws Exception {
         this.mainController.updateAppStatus("sending a request 'GET http://127.0.0.1:8000/fields' to get the fields values");
 
         // starting the connection
@@ -31,6 +37,8 @@ public class Field {
         // response
         int responseCode = con.getResponseCode();
         this.mainController.updateAppStatus("returning with response code: " + responseCode);
+
+        InputStream inputStream = con.getInputStream();
 
         String inputLine;
         StringBuffer response = new StringBuffer();
@@ -43,6 +51,6 @@ public class Field {
         }
         in.close();
 
-        return response.toString();
+        return  new JSONObject(response.toString());
     }
 }
