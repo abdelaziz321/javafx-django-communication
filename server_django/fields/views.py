@@ -19,7 +19,7 @@ def get_fields(request):
 @csrf_exempt
 def update_field(request, field_name):
     if request.method != 'POST':
-        raise Http404("Question does not exist")
+        raise Http404("Not Supported Route: Use POST Method.")
 
     # handling post request
     try:
