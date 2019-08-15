@@ -66,12 +66,7 @@ public class MainController {
     {
         this.fieldModel = new Field(this);
 
-        try {
-            this.setInitialFieldsValues();
-        }
-        catch (Exception e) {
-            this.updateAppStatus("Can't retrieve the initial fields values\n\n");
-        }
+        this.setInitialFieldsValues();
 
         this.addBtnA.setOnAction(e -> this.add("A", 1));
         this.addBtnB.setOnAction(e -> this.add("B", 1));
