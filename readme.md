@@ -3,7 +3,7 @@
 
 \- Feel free to copy, read, fork, or whatever you want.
 
-<br />
+
 
 ---
 
@@ -23,11 +23,13 @@ python manage.py runserver
 ##### :arrow_forward: client_javafx directory:
 \- Start the app, watch the console while playing with the add/subtract buttons.
 
-<br />
+
 
 ---
 
 ## Screenshot:
+
+![shot](./.dev/shot.png)
 
 <br />
 
