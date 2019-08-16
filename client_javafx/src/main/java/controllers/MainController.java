@@ -86,10 +86,10 @@ public class MainController {
 
         try {
             jsonFields = this.fieldModel.getInitialValues();
-            this.updateAppStatus("retrieved Json is " + jsonFields.toString() + "\n\n");
+            this.updateAppStatus("retrieved Json is " + jsonFields.toString() + "\n");
         }
         catch (Exception e) {
-            this.updateAppStatus("Can't retrieve the initial fields values\n\n");
+            this.updateAppStatus("Can't retrieve the initial fields values\n");
         }
 
         // show the initial values
@@ -97,7 +97,7 @@ public class MainController {
             this.setResultLabels(jsonFields);
         }
         catch (JSONException e) {
-            this.updateAppStatus("Can't parse the initial fields values\n\n");
+            this.updateAppStatus("Can't parse the initial fields values\n");
         }
     }
 
@@ -108,10 +108,10 @@ public class MainController {
      */
     private void setResultLabels(JSONObject jsonFields) throws JSONException
     {
-        this.resultA.setText( jsonFields.getString("A") );
-        this.resultB.setText( jsonFields.getString("B") );
-        this.resultC.setText( jsonFields.getString("C") );
-        this.resultD.setText( jsonFields.getString("D") );
+        this.resultA.setText( Integer.toString(jsonFields.getInt("A")) );
+        this.resultB.setText( Integer.toString(jsonFields.getInt("B")) );
+        this.resultC.setText( Integer.toString(jsonFields.getInt("C")) );
+        this.resultD.setText( Integer.toString(jsonFields.getInt("D")) );
     }
 
     @FXML
@@ -122,10 +122,10 @@ public class MainController {
 
         try {
             jsonFields = this.fieldModel.updateField(field, value);
-            this.updateAppStatus("retrieved Json is " + jsonFields.toString() + "\n\n");
+            this.updateAppStatus("retrieved Json is " + jsonFields.toString() + "\n");
         }
         catch (Exception e) {
-            this.updateAppStatus("Can't update the value of the field: " + field + "\n\n");
+            this.updateAppStatus("Can't update the value of the field: " + field + "\n");
         }
 
         // show the updated values
@@ -133,7 +133,7 @@ public class MainController {
             this.setResultLabel(field, jsonFields);
         }
         catch (JSONException e) {
-            this.updateAppStatus("Can't parse the retrieved value of the field: " + field + "\n\n");
+            this.updateAppStatus("Can't parse the retrieved value of the field: " + field + "\n");
         }
     }
 
