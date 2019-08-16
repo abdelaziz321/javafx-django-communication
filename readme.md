@@ -1,7 +1,7 @@
 ## Overview:
 \- This is just a showcase of how to build half-duplex [HTTP] and full-duplex [Websocket] communications between a **`Django`** API and a **`Java`** Desktop application.
 
-\- Feel free to copy, read, fork or whatever you want. 
+\- Feel free to copy, read, fork or whatever you want.
 
 \- Agenda:
 
