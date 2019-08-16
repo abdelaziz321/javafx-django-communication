@@ -23,11 +23,12 @@ def update_field(request, field_name):
 
     # handling post request
     try:
-        field = Field.objects.filter(name='A')[0]
+        field = Field.objects.filter(name=field_name)[0]
     except Field.DoesNotExist:
         raise Http404("Field does not exist")
 
-    field.value += int(request.POST.get('value', 0))
+    data = json.loads(request.body)
+    field.value += data['value']
     field.save()
 
     return HttpResponse(
