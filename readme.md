@@ -13,7 +13,7 @@
 
 ## Usage:
 ##### :arrow_forward: server_django:
-\- Make sure you have **`python3`**, **`Django`** installed in your machine.  [checkout this link]( https://docs.djangoproject.com/en/2.2/topics/install/ )
+\- Make sure you have **`python3`**, **`Django`** installed in your machine.  [check this link]( https://docs.djangoproject.com/en/2.2/topics/install/ )
 
 ```bash
 cd server_django
